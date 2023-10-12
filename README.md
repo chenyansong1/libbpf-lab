@@ -76,7 +76,9 @@ This starter template includes the following features:
 
 ## **How to use**
 
-### **0. 我的环境是Ubuntu22.04， kernel= `5.15.0-43-generic #46-Ubuntu SMP Tue Jul 12 10:30:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux `
+### **0. 我的环境
+
+> Ubuntu22.04， kernel= `5.15.0-43-generic #46-Ubuntu SMP Tue Jul 12 10:30:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux `
 
 ### **1. Create a new repository using this template**
 
