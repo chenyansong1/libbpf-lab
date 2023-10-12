@@ -76,6 +76,8 @@ This starter template includes the following features:
 
 ## **How to use**
 
+### **0. 我的环境是Ubuntu22.04， kernel= `5.15.0-43-generic #46-Ubuntu SMP Tue Jul 12 10:30:17 UTC 2022 x86_64 x86_64 x86_64 GNU/Linux `
+
 ### **1. Create a new repository using this template**
 
 Click the "Use this template" button on the GitHub repository page to create a new repository based on this template.
@@ -114,6 +116,51 @@ To build the project, run the following command:
 
 ```sh
 make build
+```
+
+这里build的时候可能会如下的错误：
+```sh
+cys@cys-VirtualBox:~/git_workspace/libbpf-lab$ make build
+
+make -C src
+
+make[1]: Entering directory '/home/cys/git_workspace/libbpf-lab/src'
+
+  BPFTOOL  bpftool/bootstrap/bpftool
+
+...                        libbfd: [ OFF ]
+
+...               clang-bpf-co-re: [ on  ]
+
+...                          llvm: [ OFF ]
+
+...                        libcap: [ OFF ]
+
+make[3]: pkg-config: No such file or directory
+
+make[3]: gcc: No such file or directory
+
+  CC       /home/cys/git_workspace/libbpf-lab/src/.output/bpftool/bootstrap/libbpf/staticobjs/bpf.o
+
+make[3]: gcc: No such file or directory
+
+make[3]: *** [Makefile:131: /home/cys/git_workspace/libbpf-lab/src/.output/bpftool/bootstrap/libbpf/staticobjs/bpf.o] Error 127
+
+make[2]: *** [Makefile:52: /home/cys/git_workspace/libbpf-lab/src/.output/bpftool/bootstrap/libbpf/libbpf.a] Error 2
+
+make[1]: *** [Makefile:81: /home/cys/git_workspace/libbpf-lab/src/.output/bpftool/bootstrap/bpftool] Error 2
+
+make[1]: Leaving directory '/home/cys/git_workspace/libbpf-lab/src'
+
+make: *** [Makefile:2: build] Error 2
+
+
+```
+
+解决的方式
+
+```sh
+sudo apt install pkgconf
 ```
 
 This will compile your code and create the necessary binaries. You can you the `Github Code space` or `Github Action` to build the project as well.
